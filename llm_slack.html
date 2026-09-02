@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Isaac Hwang | Builder &amp; Creator</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1a1c1c",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e3e2e2",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "secondary-container": "#e3e2e2",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-secondary-container": "#646464",
+                        "border-low-contrast": "#D9D9D9",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#4c4546",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-tertiary-container": "#848484",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "primary-container": "#1b1b1b",
+                        "outline-variant": "#cfc4c5",
+                        "secondary": "#5e5e5e",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface": "#f9f9f9",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-container": "#1b1b1b",
+                        "on-primary-container": "#848484",
+                        "surface-tint": "#5e5e5e",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-fixed": "#e2e2e2",
+                        "outline": "#7e7576",
+                        "surface-subtle": "#F7F7F7",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-surface": "#2f3131",
+                        "background": "#f9f9f9",
+                        "primary": "#000000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-xl": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "meta-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "meta-sm": ["14px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+        /* Segmented Toggle */
+        .segmented-toggle {
+            display: inline-grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: #F3F4F6;
+            border-radius: 9999px;
+            padding: 4px;
+            position: relative;
+        }
+
+        .active-bg {
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            left: 4px;
+            width: calc(50% - 4px);
+            background-color: #ffffff;
+            border-radius: 9999px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+
+        .segmented-toggle[data-active="watching"] .active-bg {
+            transform: translateX(100%);
+        }
+
+        .toggle-btn {
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            border-radius: 9999px;
+            padding: 8px 20px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #9CA3AF;
+            transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .toggle-btn:hover {
+            color: #4B5563;
+        }
+
+        .toggle-btn.active {
+            color: #1a1c1c;
+        }
+
+        /* Chip Tags */
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            border: 1px solid #E5E7EB;
+            background: #FAFAFA;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+            transition: all 0.2s ease;
+            cursor: default;
+            user-select: none;
+        }
+
+        .chip:hover {
+            transform: scale(1.05);
+            border-color: #D1D5DB;
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .chip .chip-emoji {
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        /* Category Content */
+        .category-content {
+            display: none;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .category-content.active {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 10px;
+            justify-content: start;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <header class="w-full top-0 left-0 z-50 sticky py-4 px-margin-mobile md:px-margin-desktop">
+        <nav
+            class="flex justify-between items-center w-full px-6 md:px-8 py-3 max-w-container-max mx-auto bg-background/80 backdrop-blur-md border border-border-low-contrast rounded-full shadow-sm">
+            <a class="flex items-center gap-3 hover:opacity-70 transition-opacity duration-150" href="home_screen.html">
+                <img src="Photos/isaac_headshot.png" alt="Isaac Hwang" class="w-8 h-8 rounded-full object-cover" />
+                <span
+                    class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter text-primary dark:text-on-background">Isaac
+                    Hwang</span>
+            </a>
+
+            <a class="font-label-caps text-label-caps uppercase bg-primary text-on-primary px-6 py-2 rounded-full hover:bg-on-surface transition-colors duration-150 hidden md:block"
+                href="https://www.linkedin.com/in/isaac-hwang" target="_blank">
+                Contact
+            </a>
+            <button class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </nav>
+    </header>
+    <!-- Main Content Canvas -->
+    <main
+        class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-8 pb-section-gap">
+        <div class="mb-6">
+            <a class="inline-flex items-center justify-center w-10 h-10 border border-border-low-contrast rounded-full text-secondary hover:text-primary hover:border-primary transition-colors duration-200 bg-surface-container-lowest shadow-sm"
+                href="home_screen.html" aria-label="Back to home">
+                <span class="material-symbols-outlined text-xl">arrow_back</span>
+            </a>
+        </div>
+        <section class="border border-border-low-contrast bg-surface-container-lowest" id="llm-slack">
+            <!-- Hero Image -->
+            <div
+                class="w-full h-[400px] md:h-[500px] flex items-center justify-center p-8 md:p-12 bg-[#f3e5f5] dark:bg-surface-subtle border-b border-border-low-contrast">
+                <img alt="LLM Slack Interface concept"
+                    class="max-w-full max-h-full object-contain rounded-2xl shadow-sm border border-border-low-contrast"
+                    src="Photos/gemini.png" />
+            </div>
+            <!-- Project Header -->
+            <div class="p-8 md:p-12">
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <span class="font-meta-sm text-meta-sm text-secondary">2026 · Developer</span>
+                </div>
+                <h2
+                    class="font-display-xl text-display-xl md:font-display-xl md:text-display-xl font-headline-lg text-headline-lg text-primary mb-6">
+                    LLM Slack Interface</h2>
+
+                <!-- Problem & Solution Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-12">
+                    <div class="border-t border-border-low-contrast pt-6">
+                        <h3 class="font-label-caps text-label-caps uppercase text-secondary mb-4">Problem</h3>
+                        <p class="font-body-md text-body-md">When people creating conversations ask follow-up questions
+                            or seek clarification on specific outputs, those interactions clutter the primary chat
+                            window. This makes it difficult for both the creator and the people reviewing the
+                            conversation to identify a clear final answer.</p>
+                    </div>
+                    <div class="border-t border-border-low-contrast pt-6">
+                        <h3 class="font-label-caps text-label-caps uppercase text-secondary mb-4">Solution</h3>
+                        <p class="font-body-md text-body-md">A Slack-style UI change solves this chat pollution.
+                            Highlighting text and clicking a button opens the follow-up in a right-hand sidebar thread
+                            instead of the main conversation.</p>
+                    </div>
+                </div>
+
+                <!-- Process Steps -->
+                <div class="space-y-10 mb-12">
+                    <div class="border-t border-border-low-contrast pt-6">
+                        <div class="flex items-baseline gap-4 mb-3">
+                            <span class="font-label-caps text-label-caps uppercase text-secondary">Part 1</span>
+                            <h4 class="font-body-lg text-body-lg font-bold">Understanding the problem</h4>
+                        </div>
+                        <p class="font-body-md text-body-md text-secondary max-w-3xl">As a workaround for chat
+                            pollution, people often ask the model to summarize the entire conversation or migrate to a
+                            new chat window. The main conversation gets lost in the noise.</p>
+                    </div>
+
+                    <div class="border-t border-border-low-contrast pt-6">
+                        <div class="flex items-baseline gap-4 mb-3">
+                            <span class="font-label-caps text-label-caps uppercase text-secondary">Part 2</span>
+                            <h4 class="font-body-lg text-body-lg font-bold">Coming up with ideas and solutions</h4>
+                        </div>
+                        <p class="font-body-md text-body-md text-secondary max-w-3xl">We accepted that follow-up
+                            questions are a permanent part of the workflow and gave them a dedicated space. This keeps
+                            the root conversation clean. All exploratory back-and-forth stays isolated and addressable.
+                        </p>
+                    </div>
+
+                    <div class="border-t border-border-low-contrast pt-6">
+                        <div class="flex items-baseline gap-4 mb-3">
+                            <span class="font-label-caps text-label-caps uppercase text-secondary">Part 3</span>
+                            <h4 class="font-body-lg text-body-lg font-bold">Deciding & Prototyping</h4>
+                        </div>
+                        <p class="font-body-md text-body-md text-secondary max-w-3xl">We built context-aware thread
+                            routing to support the isolated chats. This passes the global session context alongside the
+                            highlighted text and the user's sidebar prompt to the backend.</p>
+                    </div>
+
+                    <div class="border-t border-border-low-contrast pt-6">
+                        <div class="flex items-baseline gap-4 mb-3">
+                            <span class="font-label-caps text-label-caps uppercase text-secondary">Part 4</span>
+                            <h4 class="font-body-lg text-body-lg font-bold">Round of testing and improvements</h4>
+                        </div>
+                        <p class="font-body-md text-body-md text-secondary max-w-3xl">We added a reply count badge on
+                            the parent block in the main chat to display the number of messages inside its thread. Users
+                            can easily locate branching conversations.</p>
+                    </div>
+                </div>
+
+                <!-- Reflections -->
+                <div class="border border-border-low-contrast p-8 bg-surface-subtle">
+                    <h3 class="font-label-caps text-label-caps uppercase text-secondary mb-4">Reflections</h3>
+                    <p class="font-body-lg text-body-lg">The core assumption proved right. Users explore data
+                        non-linearly, and forcing follow-up questions into a single feed inevitably breaks the
+                        workspace. Providing dedicated sub-conversations kept the main conversation clean, making
+                        knowledge more accessible to users.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full bottom-0 border-t border-border-low-contrast dark:border-outline bg-background dark:bg-background">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-margin-desktop mt-section-gap max-w-container-max mx-auto gap-8 md:gap-0">
+            <div class="font-label-caps text-label-caps uppercase tracking-widest text-primary dark:text-on-background">
+                &copy; 2026 Isaac Hwang
+            </div>
+            <div class="flex gap-8 font-meta-sm text-meta-sm">
+                <a class="text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background underline transition-all duration-150 transition-colors duration-200"
+                    href="https://www.linkedin.com/in/isaac-hwang" target="_blank">
+                    LinkedIn
+                </a>
+                <a class="text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background underline transition-all duration-150 transition-colors duration-200"
+                    href="mailto:hwang.isaacb@gmail.com">
+                    Email
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Interactive category toggle
+        function showCategory(category) {
+            // Hide all content
+            document.querySelectorAll('.category-content').forEach(el => el.classList.remove('active'));
+            // Deactivate all buttons
+            document.querySelectorAll('.toggle-btn').forEach(el => el.classList.remove('active'));
+            // Show selected content
+            document.getElementById(category + '-content').classList.add('active');
+            // Activate selected button
+            const activeBtn = document.querySelector(`[data-category="${category}"]`);
+            activeBtn.classList.add('active');
+            // Move sliding background
+            activeBtn.closest('.segmented-toggle').setAttribute('data-active', category);
+        }
+
+        // Simple script to handle scroll reveal interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-up').forEach((el) => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About - Isaac Hwang</title>
+<title>About | Isaac Hwang</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -104,26 +104,73 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        .category-btn {
+        /* Segmented Toggle */
+        .segmented-toggle {
+            display: inline-flex;
+            background-color: #F3F4F6;
+            border-radius: 9999px;
+            padding: 4px;
+            gap: 4px;
+        }
+        .toggle-btn {
             cursor: pointer;
+            border: none;
+            background: transparent;
+            border-radius: 9999px;
+            padding: 8px 20px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #9CA3AF;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .toggle-btn:hover {
+            color: #4B5563;
+        }
+        .toggle-btn.active {
+            background: #ffffff;
+            color: #1a1c1c;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+        }
+        /* Chip Tags */
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            border: 1px solid #E5E7EB;
+            background: #FAFAFA;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
             transition: all 0.2s ease;
+            cursor: default;
+            user-select: none;
         }
-        .category-btn:hover {
-            background-color: #1a1c1c;
-            color: #ffffff;
-            border-color: #1a1c1c;
+        .chip:hover {
+            transform: scale(1.05);
+            border-color: #D1D5DB;
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         }
-        .category-btn.active {
-            background-color: #1a1c1c;
-            color: #ffffff;
-            border-color: #1a1c1c;
+        .chip .chip-emoji {
+            font-size: 16px;
+            line-height: 1;
         }
+        /* Category Content */
         .category-content {
             display: none;
             animation: fadeIn 0.3s ease forwards;
         }
         .category-content.active {
-            display: block;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 10px;
+            justify-content: start;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(8px); }
@@ -133,15 +180,14 @@
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
 <!-- TopNavBar -->
-<nav class="bg-background dark:bg-background border-b border-border-low-contrast dark:border-outline w-full top-0 left-0 sticky z-50">
-<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto">
-<a class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter text-primary dark:text-on-background hover:opacity-70 transition-opacity duration-150" href="home_screen.html">IH</a>
-<div class="hidden md:flex gap-gutter">
-<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background transition-colors duration-150 cursor-pointer transition-all duration-150 ease-in-out" href="home_screen.html">Home</a>
-<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background transition-colors duration-150 cursor-pointer transition-all duration-150 ease-in-out" href="work_screen.html">Work</a>
-<a class="font-body-md text-body-md text-primary dark:text-on-background font-bold border-b-2 border-primary dark:border-on-background pb-1 cursor-pointer transition-all duration-150 ease-in-out" href="about_screen.html">About</a>
-</div>
-<a class="bg-primary text-on-primary px-4 py-2 font-body-md text-body-md hover:bg-on-surface-variant transition-colors duration-150 cursor-pointer hidden md:inline-block" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">Contact</a>
+<nav class="w-full top-0 left-0 sticky z-50 py-4 px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-center w-full px-6 md:px-8 py-3 max-w-container-max mx-auto bg-background/80 backdrop-blur-md border border-border-low-contrast rounded-full shadow-sm">
+<a class="flex items-center gap-3 hover:opacity-70 transition-opacity duration-150" href="home_screen.html">
+    <img src="Photos/isaac_headshot.png" alt="Isaac Hwang" class="w-8 h-8 rounded-full object-cover" />
+    <span class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter text-primary dark:text-on-background">Isaac Hwang</span>
+</a>
+
+<a class="bg-primary text-on-primary px-4 py-2 rounded-full font-body-md text-body-md hover:bg-on-surface-variant transition-colors duration-150 cursor-pointer hidden md:inline-block" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">Contact</a>
 <button class="md:hidden text-primary">
 <span class="material-symbols-outlined">menu</span>
 </button>
@@ -151,14 +197,14 @@
 <main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-margin-desktop">
 <!-- Header Section -->
 <section class="mb-section-gap">
-<h1 class="font-display-xl text-display-xl mb-gutter">Hi, I'm Isaac Hwang.</h1>
-<p class="font-body-lg text-body-lg text-secondary max-w-2xl">I like to build cool, fun things.</p>
+<p class="font-meta-sm text-meta-sm text-secondary tracking-wide mb-4">👋 Hey, I'm Isaac Hwang</p>
+<h1 class="font-display-xl text-display-xl mb-gutter">I like to build cool, fun things.</h1>
 </section>
 <!-- Bento Grid: Bio & Image -->
 <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-gap">
 <!-- Image Card -->
 <div class="md:col-span-4 border border-border-low-contrast p-8 flex flex-col justify-between">
-<img class="w-full h-auto object-cover border border-border-low-contrast mb-4" alt="Isaac Hwang enjoying a meal" src="Photos/isaac_meal.png"/>
+<img class="w-full h-auto object-contain mb-4" alt="Isaac Hwang enjoying a meal" src="Photos/isaac_meal.png"/>
 <div class="text-right">
 <p class="font-label-caps text-label-caps uppercase">Location</p>
 <p class="font-meta-sm text-meta-sm text-secondary">St. Louis, MO</p>
@@ -167,34 +213,34 @@
 <!-- Bio Card -->
 <div class="md:col-span-8 border border-border-low-contrast p-8">
 <h2 class="font-label-caps text-label-caps uppercase text-secondary mb-base">Background</h2>
-<div class="font-body-md text-body-md space-y-4">
+<div class="font-body-md text-body-md space-y-4 mb-8">
 <p>I love creating things that solve real problems or make someone's day a little bit more entertaining. I have shipped agents at U.S. Bank and scaled my on-campus consulting firm to 30k ARR. I also launched Product Space @ WashU.</p>
 <p>Now when I have time I enjoy building fun side projects with AI and emerging tech, experimenting with tools to solve problems I find interesting.</p>
 </div>
-</div>
 <!-- Interactive Categories -->
-<div class="md:col-span-12 border border-border-low-contrast p-8">
-<h2 class="font-label-caps text-label-caps uppercase text-secondary mb-4">A few things about me</h2>
-<div class="flex flex-wrap gap-3 mb-6">
-<button class="category-btn font-label-caps text-label-caps uppercase border border-border-low-contrast px-4 py-2 active" data-category="cooking" onclick="showCategory('cooking')">
-                        Cooking
-                    </button>
-<button class="category-btn font-label-caps text-label-caps uppercase border border-border-low-contrast px-4 py-2" data-category="watching" onclick="showCategory('watching')">
-                        Watching
-                    </button>
-<button class="category-btn font-label-caps text-label-caps uppercase border border-border-low-contrast px-4 py-2" data-category="social" onclick="showCategory('social')">
-                        Social
-                    </button>
+<h3 class="font-label-caps text-label-caps uppercase text-secondary mb-2">A few things about me</h3>
+<p class="font-meta-sm text-meta-sm text-secondary tracking-wide mb-4">When I am not building, here is what is in rotation:</p>
+<div class="segmented-toggle mb-6" data-active="cooking">
+<div class="active-bg"></div>
+<button class="toggle-btn active" data-category="cooking" onclick="showCategory('cooking')">
+    Cooking
+</button>
+<button class="toggle-btn" data-category="watching" onclick="showCategory('watching')">
+    Watching
+</button>
 </div>
 <div class="min-h-[40px]">
 <div class="category-content active" id="cooking-content">
-<p class="font-body-md text-body-md text-secondary">Fried Chicken and cantonese lobster. I also make lamb roast and chicken piccata.</p>
+    <span class="chip"><span class="chip-emoji">🍗</span> Buttermilk Fried Chicken</span>
+    <span class="chip"><span class="chip-emoji">🦞</span> Cantonese Ginger Scallion Lobster</span>
+    <span class="chip"><span class="chip-emoji">🥩</span> Garlic Herb Lamb Roast</span>
+    <span class="chip"><span class="chip-emoji">🍋</span> Pan-seared Chicken Piccata</span>
 </div>
 <div class="category-content" id="watching-content">
-<p class="font-body-md text-body-md text-secondary">Widow's Bay and Steven Universe. I am also watching Severance.</p>
-</div>
-<div class="category-content" id="social-content">
-<a class="font-body-md text-body-md text-primary underline hover:opacity-70 transition-opacity duration-150" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">www.linkedin.com/in/isaac-hwang</a>
+    <span class="chip"><span class="chip-emoji">📺</span> Severance</span>
+    <span class="chip"><span class="chip-emoji">🛸</span> Steven Universe</span>
+    <span class="chip"><span class="chip-emoji">🌊</span> Widow's Bay</span>
+    <span class="chip"><span class="chip-emoji">🐉</span> Game of Thrones</span>
 </div>
 </div>
 </div>
@@ -208,7 +254,7 @@
 <div class="border-b border-border-low-contrast pb-6">
 <div class="flex justify-between items-baseline mb-2">
 <h3 class="font-meta-sm text-meta-sm font-bold">AI Agent Developer</h3>
-<span class="font-label-caps text-label-caps text-secondary">2025 - 2026</span>
+<span class="font-label-caps text-label-caps text-secondary">2025 to 2026</span>
 </div>
 <p class="font-meta-sm text-meta-sm text-secondary mb-2">U.S. Bank</p>
 <p class="font-body-md text-body-md">Shipped production AI agents for internal workflows, contributing to the bank's automation strategy.</p>
@@ -216,7 +262,7 @@
 <div class="border-b border-border-low-contrast pb-6">
 <div class="flex justify-between items-baseline mb-2">
 <h3 class="font-meta-sm text-meta-sm font-bold">Founder</h3>
-<span class="font-label-caps text-label-caps text-secondary">2024 - Present</span>
+<span class="font-label-caps text-label-caps text-secondary">2024 to Present</span>
 </div>
 <p class="font-meta-sm text-meta-sm text-secondary mb-2">On-Campus Consulting Firm</p>
 <p class="font-body-md text-body-md">Scaled the firm to 30k ARR, managing client engagements and building out the team.</p>
@@ -224,7 +270,7 @@
 <div class="border-b border-border-low-contrast pb-6">
 <div class="flex justify-between items-baseline mb-2">
 <h3 class="font-meta-sm text-meta-sm font-bold">Founder</h3>
-<span class="font-label-caps text-label-caps text-secondary">2024 - Present</span>
+<span class="font-label-caps text-label-caps text-secondary">2024 to Present</span>
 </div>
 <p class="font-meta-sm text-meta-sm text-secondary mb-2">Product Space @ WashU</p>
 <p class="font-body-md text-body-md">Launched the campus product community, creating a space for students to explore product thinking and building.</p>
@@ -246,24 +292,14 @@
 </div>
 </div>
 </section>
-<!-- Contact Form -->
+<!-- Contact Section -->
 <section class="max-w-2xl border border-border-low-contrast p-8 mb-section-gap">
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">Get in touch</h2>
-<form class="space-y-6">
-<div>
-<label class="block font-label-caps text-label-caps uppercase text-secondary mb-2" for="name">Name</label>
-<input class="w-full bg-transparent border-0 border-b border-border-low-contrast focus:ring-0 focus:border-primary font-body-md text-body-md py-2 px-0" id="name" type="text"/>
-</div>
-<div>
-<label class="block font-label-caps text-label-caps uppercase text-secondary mb-2" for="email">Email</label>
-<input class="w-full bg-transparent border-0 border-b border-border-low-contrast focus:ring-0 focus:border-primary font-body-md text-body-md py-2 px-0" id="email" type="email"/>
-</div>
-<div>
-<label class="block font-label-caps text-label-caps uppercase text-secondary mb-2" for="message">Message</label>
-<textarea class="w-full bg-transparent border border-border-low-contrast focus:ring-0 focus:border-primary font-body-md text-body-md p-4 mt-2" id="message" rows="4"></textarea>
-</div>
-<button class="bg-primary text-on-primary font-body-md text-body-md px-6 py-3 hover:bg-on-surface-variant transition-colors duration-150" type="submit">Send Message</button>
-</form>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">Get in touch</h2>
+<p class="font-body-md text-body-md text-secondary mb-6">Connect with me directly on LinkedIn.</p>
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary font-body-md text-body-md px-6 py-3 hover:bg-on-surface-variant transition-colors duration-150" href="https://www.linkedin.com/in/isaac-hwang" rel="noopener noreferrer" target="_blank">
+    Connect on LinkedIn
+    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
 </section>
 </main>
 <!-- Footer -->
@@ -274,7 +310,7 @@
             </div>
 <div class="flex gap-gutter font-meta-sm text-meta-sm text-secondary dark:text-on-surface-variant">
 <a class="hover:text-primary dark:hover:text-on-background underline transition-all duration-150" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">LinkedIn</a>
-<a class="hover:text-primary dark:hover:text-on-background underline transition-all duration-150" href="mailto:isaac@example.com">Email</a>
+<a class="hover:text-primary dark:hover:text-on-background underline transition-all duration-150" href="mailto:hwang.isaacb@gmail.com">Email</a>
 </div>
 </div>
 </footer>
@@ -282,9 +318,11 @@
         // Interactive category toggle
         function showCategory(category) {
             document.querySelectorAll('.category-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.category-btn').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.toggle-btn').forEach(el => el.classList.remove('active'));
             document.getElementById(category + '-content').classList.add('active');
-            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+            const activeBtn = document.querySelector(`[data-category="${category}"]`);
+            activeBtn.classList.add('active');
+            activeBtn.closest('.segmented-toggle').setAttribute('data-active', category);
         }
     </script>
 </body></html>
