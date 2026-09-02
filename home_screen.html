@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Isaac Hwang - Builder &amp; Creator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1a1c1c",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e3e2e2",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "secondary-container": "#e3e2e2",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-secondary-container": "#646464",
+                        "border-low-contrast": "#D9D9D9",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#4c4546",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-tertiary-container": "#848484",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-highest": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "primary-container": "#1b1b1b",
+                        "outline-variant": "#cfc4c5",
+                        "secondary": "#5e5e5e",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface": "#f9f9f9",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-container": "#1b1b1b",
+                        "on-primary-container": "#848484",
+                        "surface-tint": "#5e5e5e",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dadada",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1c",
+                        "tertiary-fixed": "#e2e2e2",
+                        "outline": "#7e7576",
+                        "surface-subtle": "#F7F7F7",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-surface": "#2f3131",
+                        "background": "#f9f9f9",
+                        "primary": "#000000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-xl": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "meta-sm": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "meta-sm": ["14px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes revealUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .category-btn {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .category-btn:hover {
+            background-color: #1a1c1c;
+            color: #ffffff;
+            border-color: #1a1c1c;
+        }
+        .category-btn.active {
+            background-color: #1a1c1c;
+            color: #ffffff;
+            border-color: #1a1c1c;
+        }
+        .category-content {
+            display: none;
+            animation: fadeIn 0.3s ease forwards;
+        }
+        .category-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="w-full top-0 left-0 border-b border-border-low-contrast dark:border-outline bg-background dark:bg-background z-50 sticky">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto">
+<a class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter text-primary dark:text-on-background hover:opacity-70 transition-opacity duration-150" href="home_screen.html">
+                IH
+            </a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-primary dark:text-on-background font-bold border-b-2 border-primary dark:border-on-background pb-1 cursor-pointer transition-all duration-150 ease-in-out" href="home_screen.html">
+                    Home
+                </a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background transition-colors duration-150 cursor-pointer transition-all duration-150 ease-in-out hover:opacity-70" href="work_screen.html">
+                    Work
+                </a>
+<a class="font-body-md text-body-md text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background transition-colors duration-150 cursor-pointer transition-all duration-150 ease-in-out hover:opacity-70" href="about_screen.html">
+                    About
+                </a>
+</div>
+<a class="font-label-caps text-label-caps uppercase bg-primary text-on-primary px-6 py-3 hover:bg-on-surface transition-colors duration-150 hidden md:block" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">
+                Contact
+            </a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 pb-section-gap">
+<!-- Hero Section -->
+<section class="py-24 md:py-32 flex flex-col gap-8 md:gap-12 reveal-up">
+<h1 class="font-display-xl text-display-xl max-w-4xl tracking-tighter leading-none">
+                Hi, I'm Isaac Hwang.
+            </h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-secondary">
+                I like to build cool, fun things.
+            </p>
+<div class="pt-4 reveal-up stagger-1">
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase border border-primary px-6 py-3 hover:bg-primary hover:text-on-primary transition-colors duration-150" href="#work">
+                    View Selected Works
+                    <span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+</section>
+<!-- Background Section: Image + Paragraph -->
+<section class="reveal-up stagger-2 mb-section-gap">
+<div class="flex flex-col md:flex-row gap-gutter items-start">
+<!-- Image Column -->
+<div class="w-full md:w-5/12 flex-shrink-0">
+<img alt="Isaac Hwang enjoying a meal" class="w-full h-auto object-cover border border-border-low-contrast" src="Photos/isaac_meal.png"/>
+</div>
+<!-- Text Column -->
+<div class="w-full md:w-7/12 flex flex-col justify-center">
+<p class="font-body-lg text-body-lg text-secondary mb-8">
+                        I love creating things that solve real problems or make someone's day a little bit more entertaining. I have shipped agents at U.S. Bank and scaled my on-campus consulting firm to 30k ARR. I also launched Product Space @ WashU. Now when I have time I enjoy building fun side projects with AI and emerging tech, experimenting with tools to solve problems I find interesting.
+                    </p>
+<!-- Interactive Categories -->
+<div>
+<div class="flex flex-wrap gap-3 mb-6">
+<button class="category-btn font-label-caps text-label-caps uppercase border border-border-low-contrast px-4 py-2 active" data-category="cooking" onclick="showCategory('cooking')">
+                                Cooking
+                            </button>
+<button class="category-btn font-label-caps text-label-caps uppercase border border-border-low-contrast px-4 py-2" data-category="watching" onclick="showCategory('watching')">
+                                Watching
+                            </button>
+<button class="category-btn font-label-caps text-label-caps uppercase border border-border-low-contrast px-4 py-2" data-category="social" onclick="showCategory('social')">
+                                Social
+                            </button>
+</div>
+<div class="min-h-[60px]">
+<div class="category-content active" id="cooking-content">
+<p class="font-body-md text-body-md text-secondary">Fried Chicken and cantonese lobster. I also make lamb roast and chicken piccata.</p>
+</div>
+<div class="category-content" id="watching-content">
+<p class="font-body-md text-body-md text-secondary">Widow's Bay and Steven Universe. I am also watching Severance.</p>
+</div>
+<div class="category-content" id="social-content">
+<a class="font-body-md text-body-md text-primary underline hover:opacity-70 transition-opacity duration-150" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">www.linkedin.com/in/isaac-hwang</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Selected Works Section -->
+<section class="pt-section-gap reveal-up stagger-3" id="work">
+<div class="border-b border-border-low-contrast pb-4 mb-12 flex justify-between items-end">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">Selected Works</h2>
+<span class="font-meta-sm text-meta-sm text-secondary">01 - 02</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-gutter">
+<!-- Project 1: John Street -->
+<article class="md:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-gutter group border border-border-low-contrast p-4 md:p-8 hover:border-primary transition-colors duration-300">
+<div class="md:col-span-7 h-[400px] overflow-hidden bg-surface-subtle">
+<img alt="John Street app preview" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105" src="Photos/johnstreet.png"/>
+</div>
+<div class="md:col-span-5 flex flex-col justify-between py-4 md:px-8">
+<div>
+<div class="flex gap-2 mb-4">
+<span class="font-label-caps text-label-caps uppercase border border-border-low-contrast px-3 py-1">Campus</span>
+<span class="font-label-caps text-label-caps uppercase border border-border-low-contrast px-3 py-1">Prediction Markets</span>
+</div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">John Street</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">
+                                A campus prediction app specifically built for WashU events.
+                            </p>
+</div>
+<a class="inline-flex items-center gap-2 font-meta-sm text-meta-sm font-bold group-hover:underline" href="work_screen.html#johnstreet">
+                            Read Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Project 2: LLM Slack Interface -->
+<article class="md:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-gutter group border border-border-low-contrast p-4 md:p-8 hover:border-primary transition-colors duration-300">
+<div class="md:col-span-7 h-[400px] overflow-hidden bg-surface-subtle">
+<img alt="LLM Slack Interface preview" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105" src="Photos/johnstreet.png"/>
+</div>
+<div class="md:col-span-5 flex flex-col justify-between py-4 md:px-8">
+<div>
+<div class="flex gap-2 mb-4">
+<span class="font-label-caps text-label-caps uppercase border border-border-low-contrast px-3 py-1">AI</span>
+<span class="font-label-caps text-label-caps uppercase border border-border-low-contrast px-3 py-1">UX</span>
+</div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">LLM Slack Interface</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">
+                                A new way to chat with your language model by hiding away unnecessary clarifications or follow-up questions to reduce clutter in conversations.
+                            </p>
+</div>
+<a class="inline-flex items-center gap-2 font-meta-sm text-meta-sm font-bold group-hover:underline" href="work_screen.html#llm-slack">
+                            Read Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bottom-0 border-t border-border-low-contrast dark:border-outline bg-background dark:bg-background">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-margin-desktop mt-section-gap max-w-container-max mx-auto gap-8 md:gap-0">
+<div class="font-label-caps text-label-caps uppercase tracking-widest text-primary dark:text-on-background">
+                &copy; 2026 Isaac Hwang
+            </div>
+<div class="flex gap-8 font-meta-sm text-meta-sm">
+<a class="text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background underline transition-all duration-150 transition-colors duration-200" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">
+                    LinkedIn
+                </a>
+<a class="text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background underline transition-all duration-150 transition-colors duration-200" href="mailto:isaac@example.com">
+                    Email
+                </a>
+</div>
+</div>
+</footer>
+<script>
+        // Interactive category toggle
+        function showCategory(category) {
+            // Hide all content
+            document.querySelectorAll('.category-content').forEach(el => el.classList.remove('active'));
+            // Deactivate all buttons
+            document.querySelectorAll('.category-btn').forEach(el => el.classList.remove('active'));
+            // Show selected content
+            document.getElementById(category + '-content').classList.add('active');
+            // Activate selected button
+            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+        }
+
+        // Simple script to handle scroll reveal interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-up').forEach((el) => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
