@@ -13,87 +13,54 @@
             theme: {
                 extend: {
                     "colors": {
-                        "on-surface": "#1a1c1c",
-                        "on-secondary": "#ffffff",
-                        "secondary-fixed": "#e3e2e2",
-                        "primary-fixed-dim": "#c6c6c6",
-                        "secondary-container": "#e3e2e2",
-                        "error": "#ba1a1a",
-                        "surface-container-lowest": "#ffffff",
-                        "on-error": "#ffffff",
+                        "background": "#fafaf9",
+                        "surface": "#ffffff",
+                        "primary": "#0f172a",
+                        "secondary": "#334155",
+                        "muted": "#64748b",
+                        "border-low-contrast": "#e2e8f0",
+                        "border-strong": "#cbd5e1",
+                        "accent": "#2563eb",
+                        "accent-hover": "#1d4ed8",
+                        "accent-light": "#eff6ff",
+                        "surface-subtle": "#f8fafc",
                         "on-primary": "#ffffff",
-                        "tertiary": "#000000",
-                        "on-secondary-container": "#646464",
-                        "border-low-contrast": "#D9D9D9",
-                        "surface-container": "#eeeeee",
-                        "primary-fixed": "#e2e2e2",
-                        "on-surface-variant": "#4c4546",
-                        "secondary-fixed-dim": "#c7c6c6",
-                        "on-tertiary-container": "#848484",
-                        "surface-variant": "#e2e2e2",
-                        "surface-container-low": "#f3f3f4",
-                        "surface-bright": "#f9f9f9",
-                        "surface-container-highest": "#e2e2e2",
-                        "tertiary-fixed-dim": "#c6c6c6",
-                        "primary-container": "#1b1b1b",
-                        "outline-variant": "#cfc4c5",
-                        "secondary": "#5e5e5e",
-                        "on-secondary-fixed": "#1b1c1c",
-                        "on-tertiary-fixed": "#1b1b1b",
-                        "on-secondary-fixed-variant": "#464747",
-                        "surface": "#f9f9f9",
-                        "inverse-primary": "#c6c6c6",
-                        "surface-container-high": "#e8e8e8",
-                        "tertiary-container": "#1b1b1b",
-                        "on-primary-container": "#848484",
-                        "surface-tint": "#5e5e5e",
-                        "error-container": "#ffdad6",
-                        "surface-dim": "#dadada",
-                        "on-error-container": "#93000a",
-                        "inverse-on-surface": "#f0f1f1",
-                        "on-primary-fixed": "#1b1b1b",
-                        "on-tertiary-fixed-variant": "#474747",
-                        "on-tertiary": "#ffffff",
-                        "on-background": "#1a1c1c",
-                        "tertiary-fixed": "#e2e2e2",
-                        "outline": "#7e7576",
-                        "surface-subtle": "#F7F7F7",
-                        "on-primary-fixed-variant": "#474747",
-                        "inverse-surface": "#2f3131",
-                        "background": "#f9f9f9",
-                        "primary": "#000000"
+                        "on-background": "#0f172a"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.25rem",
                         "lg": "0.5rem",
                         "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
                         "full": "9999px"
                     },
                     "spacing": {
                         "base": "8px",
-                        "margin-mobile": "16px",
+                        "margin-mobile": "20px",
                         "gutter": "24px",
                         "margin-desktop": "64px",
                         "section-gap": "120px",
                         "container-max": "1280px"
                     },
                     "fontFamily": {
-                        "headline-lg": ["Hanken Grotesk"],
-                        "display-xl": ["Hanken Grotesk"],
-                        "headline-lg-mobile": ["Hanken Grotesk"],
-                        "body-lg": ["Hanken Grotesk"],
-                        "body-md": ["Hanken Grotesk"],
-                        "label-caps": ["Hanken Grotesk"],
-                        "meta-sm": ["Hanken Grotesk"]
+                        "sans": ["'Hanken Grotesk'", "sans-serif"],
+                        "headline-lg": ["'Hanken Grotesk'", "sans-serif"],
+                        "headline-md": ["'Hanken Grotesk'", "sans-serif"],
+                        "display-xl": ["'Hanken Grotesk'", "sans-serif"],
+                        "body-lg": ["'Hanken Grotesk'", "sans-serif"],
+                        "body-md": ["'Hanken Grotesk'", "sans-serif"],
+                        "label-caps": ["'Hanken Grotesk'", "sans-serif"],
+                        "meta-sm": ["'Hanken Grotesk'", "sans-serif"]
                     },
                     "fontSize": {
-                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
-                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
-                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
-                        "label-caps": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "700" }],
-                        "meta-sm": ["14px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "500" }]
+                        "display-xl": ["clamp(2.75rem, 5.5vw, 3.75rem)", { "lineHeight": "1.1", "letterSpacing": "-0.035em", "fontWeight": "700" }],
+                        "headline-lg": ["34px", { "lineHeight": "1.2", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+                        "headline-md": ["26px", { "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.65", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "meta-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }]
                     }
                 }
             }
@@ -101,10 +68,42 @@
     </script>
 <style>
         body {
-            background-color: #f9f9f9;
-            color: #1a1c1c;
+            background-color: #fafaf9;
+            color: #0f172a;
+            font-family: 'Hanken Grotesk', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+        h1, .font-display-xl {
+            font-size: clamp(2.75rem, 5.5vw, 3.75rem);
+            line-height: 1.1;
+            letter-spacing: -0.035em;
+            font-weight: 700;
+        }
+        h2, .font-headline-lg {
+            font-size: 34px;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+            font-weight: 700;
+        }
+        h3, .font-headline-md {
+            font-size: 26px;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            font-weight: 600;
+        }
+        .font-body-lg {
+            font-size: 20px;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+        }
+        p, .font-body-md {
+            font-size: 16px;
+            line-height: 1.65;
+        }
+        .font-meta-sm, .font-label-caps {
+            font-size: 12px;
+            line-height: 1.4;
         }
         .reveal-up {
             opacity: 0;
@@ -125,7 +124,8 @@
         .segmented-toggle {
             display: inline-grid;
             grid-template-columns: 1fr 1fr;
-            background-color: #F3F4F6;
+            background-color: #f1f5f9;
+            border: 1px solid #e2e8f0;
             border-radius: 9999px;
             padding: 4px;
             position: relative;
@@ -138,8 +138,8 @@
             width: calc(50% - 4px);
             background-color: #ffffff;
             border-radius: 9999px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 1px 3px rgba(15,23,42,0.08), 0 1px 2px rgba(15,23,42,0.04);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 1;
         }
         .segmented-toggle[data-active="watching"] .active-bg {
@@ -154,45 +154,50 @@
             border-radius: 9999px;
             padding: 8px 20px;
             font-family: 'Hanken Grotesk', sans-serif;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #9CA3AF;
-            transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #64748b;
+            transition: color 0.2s ease, background-color 0.2s ease;
             text-align: center;
         }
         .toggle-btn:hover {
-            color: #4B5563;
+            color: #0f172a;
         }
         .toggle-btn.active {
-            color: #1a1c1c;
+            color: #0f172a;
+        }
+        .toggle-btn:focus-visible {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
         }
         /* Chip Tags */
         .chip {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
+            gap: 8px;
+            padding: 10px 18px;
             border-radius: 9999px;
-            border: 1px solid #E5E7EB;
-            background: #FAFAFA;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
             font-family: 'Hanken Grotesk', sans-serif;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 500;
-            color: #374151;
-            transition: all 0.2s ease;
+            color: #334155;
+            transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
             cursor: default;
             user-select: none;
+            box-shadow: 0 1px 2px rgba(15,23,42,0.03);
         }
         .chip:hover {
-            transform: scale(1.05);
-            border-color: #D1D5DB;
-            background: #ffffff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border-color: #93c5fd;
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            box-shadow: 0 2px 6px rgba(37,99,235,0.08);
         }
         .chip .chip-emoji {
-            font-size: 16px;
+            font-size: 20px;
             line-height: 1;
         }
         /* Category Content */
@@ -203,16 +208,16 @@
         .category-content.active {
             display: grid;
             grid-template-columns: repeat(2, auto);
-            gap: 10px;
+            gap: 12px;
             justify-content: start;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="bg-background text-on-background min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<body class="bg-background text-primary min-h-screen flex flex-col selection:bg-accent selection:text-white">
 <!-- TopNavBar -->
 <header class="w-full top-0 left-0 z-50 sticky py-4 px-margin-mobile md:px-margin-desktop">
 <nav class="flex justify-between items-center w-full px-6 md:px-8 py-3 max-w-container-max mx-auto bg-background/80 backdrop-blur-md border border-border-low-contrast rounded-full shadow-sm">
@@ -221,12 +226,9 @@
     <span class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter text-primary dark:text-on-background">Isaac Hwang</span>
 </a>
 
-<a class="font-label-caps text-label-caps uppercase bg-primary text-on-primary px-6 py-2 rounded-full hover:bg-on-surface transition-colors duration-150 hidden md:block" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">
+<a class="font-label-caps text-[12px] uppercase tracking-wider bg-primary text-on-primary px-4 py-2 md:px-6 md:py-2 rounded-full hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 active:scale-95 transition-all duration-150 inline-flex items-center justify-center" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">
                 Contact
             </a>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
-</button>
 </nav>
 </header>
 <!-- Main Content Canvas -->
@@ -284,45 +286,109 @@
 </section>
 <!-- Selected Works Section -->
 <section class="pt-section-gap reveal-up stagger-3" id="work">
-<div class="border-b border-border-low-contrast pb-4 mb-12 flex justify-between items-end">
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">Selected Works</h2>
-<span class="font-meta-sm text-meta-sm text-secondary">01 of 02</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-gutter">
-<!-- Project 1: John Street -->
-<article class="md:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-gutter group border border-border-low-contrast rounded-3xl p-4 md:p-8 hover:border-primary transition-colors duration-300">
-<div class="md:col-span-7 h-[400px] flex items-center justify-center p-8 overflow-hidden bg-[#e8eaf6] dark:bg-surface-subtle rounded-2xl">
-<img alt="John Street app preview" class="max-w-full max-h-full object-contain rounded-xl shadow-sm border border-border-low-contrast grayscale group-hover:grayscale-0 transition-all duration-500" src="Photos/johnstreet.png"/>
-</div>
-<div class="md:col-span-5 flex flex-col justify-between py-4 md:px-8">
+<!-- Editorial Section Header -->
+<div class="border-b border-border-low-contrast pb-6 mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-4">
 <div>
-<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">John Street</h3>
-<p class="font-body-md text-body-md text-secondary mb-6">
-                                A campus prediction app specifically built for WashU events.
-                            </p>
+<span class="font-meta-sm text-meta-sm uppercase tracking-widest text-secondary mb-2 block">Case Studies</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-3xl md:text-5xl font-bold tracking-tighter text-primary">Selected Works</h2>
 </div>
-<a class="inline-flex items-center justify-between w-full max-w-[200px] border border-border-low-contrast rounded-full px-5 py-2.5 font-meta-sm text-meta-sm font-bold group-hover:border-primary transition-colors duration-300" href="john_street.html">
-    <span>Open Study</span>
-    <span class="material-symbols-outlined text-sm">chevron_right</span>
+<p class="font-body-md text-secondary max-w-md">
+Two full-stack products built from scratch: a campus prediction exchange and a threaded AI conversation interface.
+</p>
+</div>
+
+<div class="space-y-24 md:space-y-36">
+<!-- Project 1: John Street (Asymmetric Bleed Layout) -->
+<article class="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+<!-- Left: Editorial Content -->
+<div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
+<h3 class="text-3xl md:text-4xl font-bold tracking-tight text-primary mb-4">
+John Street
+</h3>
+
+<p class="font-body-md text-secondary mb-6 leading-relaxed">
+WashU students rely heavily on Sidechat for campus discourse. John Street turned that passive feed into a live prediction market, where students buy and sell positions on campus elections, athletics, and university milestones.
+</p>
+
+<!-- Key Impact Metric / Interaction Highlight -->
+<div class="grid grid-cols-2 gap-4 py-4 mb-8 border-y border-border-low-contrast">
+<div>
+<div class="text-2xl md:text-3xl font-bold text-primary tracking-tight">40+</div>
+<div class="text-xs text-secondary uppercase tracking-wider font-medium mt-0.5">Beta Traders</div>
+</div>
+<div>
+<div class="text-2xl md:text-3xl font-bold text-primary tracking-tight">100+</div>
+<div class="text-xs text-secondary uppercase tracking-wider font-medium mt-0.5">Trades Executed</div>
+</div>
+</div>
+
+<div>
+<a class="inline-flex items-center gap-3 bg-primary text-on-primary hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 px-6 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 group/btn shadow-sm" href="john_street.html">
+<span>Read Case Study</span>
+<span class="material-symbols-outlined text-base transition-transform duration-200 group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+
+<!-- Right: Bleeding Full-Color UI Preview -->
+<div class="lg:col-span-7 order-1 lg:order-2">
+<a href="john_street.html" class="block relative rounded-2xl md:rounded-3xl p-3 md:p-5 bg-gradient-to-br from-neutral-100 to-neutral-200/60 border border-neutral-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+<div class="relative rounded-xl md:rounded-2xl overflow-hidden bg-white shadow-sm border border-neutral-200/50">
+<img alt="John Street prediction market app interface" class="w-full h-auto object-cover" src="Photos/johnstreet.png"/>
+</div>
+<!-- Interaction tag overlay -->
+<div class="absolute bottom-6 right-6 hidden sm:inline-flex items-center gap-2 bg-black/80 backdrop-blur-md text-white text-xs font-medium px-3.5 py-1.5 rounded-full shadow-md">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+Live Campus Prediction Feed
+</div>
 </a>
 </div>
 </article>
-<!-- Project 2: LLM Slack Interface -->
-<article class="md:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-y-6 md:gap-gutter group border border-border-low-contrast rounded-3xl p-4 md:p-8 hover:border-primary transition-colors duration-300">
-<div class="md:col-span-7 h-[400px] flex items-center justify-center p-8 overflow-hidden bg-[#f3e5f5] dark:bg-surface-subtle rounded-2xl">
-<img alt="LLM Slack Interface preview" class="max-w-full max-h-full object-contain rounded-xl shadow-sm border border-border-low-contrast grayscale group-hover:grayscale-0 transition-all duration-500" src="Photos/gemini.png"/>
+
+<!-- Project 2: LLM Slack Interface (Interaction Model Showcase) -->
+<article class="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+<!-- Left: Full-Color Wide Interaction Canvas -->
+<div class="lg:col-span-7">
+<a href="llm_slack.html" class="block relative rounded-2xl md:rounded-3xl p-3 md:p-5 bg-gradient-to-br from-neutral-100 to-neutral-200/60 border border-neutral-200/80 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+<div class="relative rounded-xl md:rounded-2xl overflow-hidden bg-[#1e1f20] shadow-sm border border-neutral-700/40">
+<img alt="LLM Slack Interface preview showing threaded side chat" class="w-full h-auto object-cover" src="Photos/gemini.png"/>
 </div>
-<div class="md:col-span-5 flex flex-col justify-between py-4 md:px-8">
-<div>
-<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4">LLM Slack Interface</h3>
-<p class="font-body-md text-body-md text-secondary mb-6">
-                                A new way to chat with your language model by hiding away unnecessary clarifications or follow-up questions to reduce clutter in conversations.
-                            </p>
+<!-- Interaction tag overlay -->
+<div class="absolute bottom-6 left-6 hidden sm:inline-flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md text-neutral-200 text-xs font-medium px-3.5 py-1.5 rounded-full shadow-md border border-neutral-700/50">
+<span class="material-symbols-outlined text-sm text-sky-400">forum</span>
+Threaded Follow-up Architecture
 </div>
-<a class="inline-flex items-center justify-between w-full max-w-[200px] border border-border-low-contrast rounded-full px-5 py-2.5 font-meta-sm text-meta-sm font-bold group-hover:border-primary transition-colors duration-300" href="llm_slack.html">
-    <span>Open Study</span>
-    <span class="material-symbols-outlined text-sm">chevron_right</span>
 </a>
+</div>
+
+<!-- Right: Editorial Narrative -->
+<div class="lg:col-span-5 flex flex-col justify-center">
+<h3 class="text-3xl md:text-4xl font-bold tracking-tight text-primary mb-4">
+LLM Slack Interface
+</h3>
+
+<p class="font-body-md text-secondary mb-6 leading-relaxed">
+Iterative follow-ups and clarifying prompts quickly fill long chat transcripts. Borrowing Slack's threading model, this interface isolates exploratory side questions in a dedicated panel, keeping the primary conversation readable.
+</p>
+
+<!-- Core UX Pattern Highlights -->
+<div class="space-y-3 mb-8 py-4 border-y border-border-low-contrast">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_circle</span>
+<p class="text-xs md:text-sm text-secondary"><strong class="text-primary font-semibold">Zero Thread Clutter:</strong> Side queries stay isolated in dedicated contextual drawers.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg shrink-0 mt-0.5">check_circle</span>
+<p class="text-xs md:text-sm text-secondary"><strong class="text-primary font-semibold">In-line Text Trigger:</strong> Highlight any sentence to start a discussion thread immediately.</p>
+</div>
+</div>
+
+<div>
+<a class="inline-flex items-center gap-3 bg-primary text-on-primary hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 px-6 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 group/btn shadow-sm" href="llm_slack.html">
+<span>Read Case Study</span>
+<span class="material-symbols-outlined text-base transition-transform duration-200 group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+</div>
 </div>
 </article>
 </div>
@@ -335,10 +401,10 @@
                 &copy; 2026 Isaac Hwang
             </div>
 <div class="flex gap-8 font-meta-sm text-meta-sm">
-<a class="text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background underline transition-all duration-150 transition-colors duration-200" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">
+<a class="text-secondary hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent underline transition-colors duration-200" href="https://www.linkedin.com/in/isaac-hwang" target="_blank">
                     LinkedIn
                 </a>
-<a class="text-secondary dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background underline transition-all duration-150 transition-colors duration-200" href="mailto:hwang.isaacb@gmail.com">
+<a class="text-secondary hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent underline transition-colors duration-200" href="mailto:hwang.isaacb@gmail.com">
                     Email
                 </a>
 </div>
